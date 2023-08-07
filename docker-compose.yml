@@ -8,3 +8,15 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
+    networks:
+      - plnet
+      - canarynet
+networks:
+  plnet:
+    name: plnet
+    driver: bridge
+    external: true
+  canarynet:
+    name: canarynet
+    driver: bridge
+    external: true
